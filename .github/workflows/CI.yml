@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [master, dev, cut-cookie]
+    branches: [main, dev, cut-cookie]
   pull_request:
     branches:
       - '**'
