@@ -13,10 +13,10 @@ jobs:
     name: Notebooks
     runs-on: ubuntu-20.04
     steps:
-      - run: |
-         sudo echo 'Acquire::http::Timeout "60";' >> "/etc/apt/apt.conf.d/99timeout"
-         sudo echo 'Acquire::ftp::Timeout "60";' >> "/etc/apt/apt.conf.d/99timeout"
-         sudo echo 'Acquire::Retries "100";' >> "/etc/apt/apt.conf.d/99timeout"
+      # - run: |
+      #    sudo echo 'Acquire::http::Timeout "60";' >> "/etc/apt/apt.conf.d/99timeout"
+      #    sudo echo 'Acquire::ftp::Timeout "60";' >> "/etc/apt/apt.conf.d/99timeout"
+      #    sudo echo 'Acquire::Retries "100";' >> "/etc/apt/apt.conf.d/99timeout"
       - run: sudo apt-get update
       - run: sudo apt-get install ghostscript
       - run: python3 -m pip install --no-cache-dir --timeout 60 --retries 100 pandas seaborn jupyter tqdm teeplot iterpop nbmetalog scipy nbconvert
