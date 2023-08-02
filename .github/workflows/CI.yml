@@ -22,8 +22,6 @@ jobs:
       - run: python3 -m pip install --no-cache-dir --timeout 60 --retries 100 pandas seaborn jupyter tqdm teeplot iterpop nbmetalog scipy nbconvert statsmodels
       - uses: actions/checkout@v3
       - run: cd notebooks && ./execute_notebooks.sh
-      # adapted from https://unix.stackexchange.com/a/545630
-      - run: find -type f -name "*.pdf" -exec bash -c 'gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dBATCH -dQUIET -sOutputFile="new.pdf" "{}"; rm "{}"; mv "new.pdf" "{}";' {} \;
       - run: git init
       - uses: fregante/setup-git-user@v1
       - run: git commit --allow-empty -m "Initial commit"
