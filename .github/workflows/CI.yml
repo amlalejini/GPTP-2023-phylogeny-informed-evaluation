@@ -19,7 +19,7 @@ jobs:
       #    sudo echo 'Acquire::Retries "100";' >> "/etc/apt/apt.conf.d/99timeout"
       - run: sudo apt-get update
       - run: sudo apt-get install ghostscript
-      - run: python3 -m pip install --no-cache-dir --timeout 60 --retries 100 pandas seaborn jupyter tqdm teeplot iterpop nbmetalog scipy nbconvert
+      - run: python3 -m pip install --no-cache-dir --timeout 60 --retries 100 pandas seaborn jupyter tqdm teeplot iterpop nbmetalog scipy nbconvert statsmodels
       - uses: actions/checkout@v3
       - run: cd notebooks && ./execute_notebooks.sh
       # adapted from https://unix.stackexchange.com/a/545630
